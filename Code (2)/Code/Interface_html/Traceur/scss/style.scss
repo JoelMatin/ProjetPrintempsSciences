@@ -1,0 +1,34 @@
+@import "bases";
+@import "classes";
+@import "utils";
+
+// GENERAL
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  background: var(--gradient);
+  h2 {
+    flex: 1;
+    padding: 1rem 10rem;
+    i {
+      transition: all 0.3s;
+      font-size: 700;
+      &:hover {
+        transform: scale(1.2);
+        color: var(--primary);
+      }
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 3rem;
+    li {
+      padding: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}

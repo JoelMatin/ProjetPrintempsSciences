@@ -1,0 +1,551 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text);
+  font-size: 1.6rem;
+  background: var(--gray-light);
+}
+
+p {
+  margin: 1rem 0;
+  font-size: 400;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+form {
+  outline: 0;
+}
+
+.title-small {
+  letter-spacing: 0.5rem;
+  font-size: 1.7rem;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+.text-hint {
+  color: var(--hint);
+}
+.text-gray {
+  color: var(--gray);
+}
+
+.legende {
+  color: var(--gray);
+  font-size: 2rem;
+  font-family: var(--font-title);
+}
+
+.tuto-container .barre, .button-container .barre, .action-container .write-container .barre, .action-container .draw-container .barre, .heigth-container .barre, .settings-container .settings-form .barre2, .settings-container .settings-form .barre3, .settings-container .settings-form .barre1, .settings-container .barre, .intro-container .barre {
+  height: 2px;
+  width: 200px;
+  background: var(--light);
+  place-self: center center;
+  border-radius: 5px;
+}
+
+.button-container .button, .reset button {
+  margin: 2rem 3rem 5rem 3rem;
+  padding: 1rem;
+  width: 180px;
+  font-size: 2rem;
+  text-align: center;
+  place-self: center center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+}
+.button-container .button:hover, .reset button:hover {
+  background: var(--primary);
+}
+
+.mx-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.blank-space {
+  height: 500px;
+}
+
+.container {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--super-light-primary);
+  background: white;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  background: var(--primary);
+  color: white;
+}
+header .img-container {
+  background: white;
+  padding: 1rem;
+  margin: 0.1rem;
+}
+header h2 {
+  flex: 1;
+  font-family: "Inconsolata", monospace;
+  margin: 0;
+  padding-top: 2.5rem;
+  text-align: center;
+  color: white;
+}
+header a {
+  flex: end;
+  margin: 2rem 4rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 2rem;
+  transition: all 0.1s;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+header a:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+header .draw {
+  margin: 2rem 0;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.intro-container .barre {
+  margin: 1rem;
+  background: black;
+  width: 400px;
+}
+.intro-container p {
+  margin: 2rem;
+}
+.intro-container a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+}
+.settings-container input {
+  border-radius: 1rem;
+  border: solid 2px var(-primary);
+  height: 3rem;
+  background: var(--light-primary);
+  color: var(--input-text);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  padding-left: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin: 1rem;
+}
+.settings-container input::placeholder {
+  color: white;
+}
+.settings-container h1 {
+  grid-area: h1;
+  padding-top: 2rem;
+  text-align: center;
+}
+.settings-container .barre {
+  align-self: center center;
+  grid-area: barre;
+  margin: 0.5rem;
+  background: black;
+  width: 200px;
+  place-self: center center;
+}
+.settings-container p {
+  margin: 1rem 2rem;
+}
+.settings-container .settings-form {
+  display: grid;
+  grid: "h3a h3b h3c" auto "barre1 barre2 barre3" auto "p1 p2 p3" auto "bh rleft centerx" auto "bw rr centery" auto/1fr 1fr 1fr;
+  margin: 2rem;
+}
+.settings-container .settings-form p {
+  text-align: center;
+}
+.settings-container .settings-form .p1 {
+  grid-area: p1;
+}
+.settings-container .settings-form .p2 {
+  grid-area: p2;
+}
+.settings-container .settings-form .p3 {
+  grid-area: p3;
+}
+.settings-container .settings-form h3 {
+  margin: 0;
+}
+.settings-container .settings-form .h3a {
+  grid-area: h3a;
+}
+.settings-container .settings-form .h3b {
+  grid-area: h3b;
+}
+.settings-container .settings-form .h3c {
+  grid-area: h3c;
+}
+.settings-container .settings-form .board-width {
+  grid-area: bw;
+  place-self: center center;
+  width: 200px;
+}
+.settings-container .settings-form .board-height {
+  grid-area: bh;
+  place-self: center center;
+  width: 200px;
+}
+.settings-container .settings-form .rope-left {
+  grid-area: rleft;
+  place-self: center center;
+  width: 200px;
+}
+.settings-container .settings-form .rope-right {
+  grid-area: rr;
+  place-self: center center;
+  width: 200px;
+}
+.settings-container .settings-form .centerx {
+  grid-area: centerx;
+  place-self: center center;
+  width: 200px;
+}
+.settings-container .settings-form .centery {
+  grid-area: centery;
+  place-self: center center;
+  width: 200px;
+}
+.settings-container .settings-form .barre1 {
+  grid-area: barre1;
+  margin: 0.5rem;
+  background: black;
+  width: 100px;
+}
+.settings-container .settings-form .barre3 {
+  grid-area: barre3;
+  margin: 0rem;
+  background: black;
+  width: 100px;
+}
+.settings-container .settings-form .barre2 {
+  grid-area: barre2;
+  margin: 0rem;
+  background: black;
+  width: 100px;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+.reset button {
+  background: var(--light-primary);
+  color: white;
+  margin: 0;
+  transition: all 0.4s;
+}
+.reset button:hover {
+  background: var(--primary);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.heigth-container {
+  display: grid;
+  grid: "img h3" 30px "img barre" 2px "img p" auto "img form" auto/300px 1fr;
+  place-items: center center;
+  padding: 2rem;
+  background: var(--super-light-primary);
+  margin-bottom: 2rem;
+}
+.heigth-container h3 {
+  grid-area: h3;
+  margin: 0;
+}
+.heigth-container .img-container {
+  grid-area: img;
+}
+.heigth-container p {
+  grid-area: p;
+  text-align: center;
+}
+.heigth-container .barre {
+  grid-area: barre;
+  background: black;
+  width: 50px;
+}
+.heigth-container form {
+  grid-area: form;
+}
+.heigth-container input {
+  border-radius: 1rem;
+  border: solid 1px var(-primary);
+  height: 3rem;
+  background: var(--light-primary);
+  color: var(--input-text);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  padding-left: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.heigth-container input::placeholder {
+  color: white;
+}
+
+.action-container {
+  display: grid;
+  grid: "draw write" auto/1fr 1fr;
+  width: 100%;
+  place-items: center center;
+  text-align: center;
+}
+.action-container p {
+  margin: 0 1rem 2rem 0;
+}
+.action-container .draw-container {
+  grid-area: draw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.action-container .draw-container h3 {
+  margin: 0;
+}
+.action-container .draw-container .barre {
+  background: black;
+  width: 50px;
+  margin-bottom: 1rem;
+}
+.action-container .draw-container .test {
+  display: block;
+}
+.action-container .draw-container .test input {
+  place-self: center center;
+  height: auto;
+  border-radius: 1rem;
+  border: solid 1px var(--primary);
+  height: 0rem;
+  width: 0rem;
+  background: var(--light-primary);
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-align: start;
+  padding: 0.5rem;
+  padding-bottom: 3rem;
+  visibility: hidden;
+}
+.action-container .draw-container .test .inputfile + label {
+  background-color: green;
+  place-self: center center;
+  height: auto;
+  border-radius: 1rem;
+  border: solid 1px var(--primary);
+  background: var(--light-primary);
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-align: start;
+  padding: 1rem;
+}
+.action-container .write-container {
+  grid-area: write;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.action-container .write-container h3 {
+  margin: 0;
+}
+.action-container .write-container .barre {
+  background: black;
+  width: 50px;
+  margin-bottom: 1rem;
+}
+.action-container .write-container input {
+  min-height: 3rem;
+  height: auto;
+  border-radius: 1rem;
+  border: solid 1px var(--primary);
+  background: var(--light-primary);
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  padding: 1rem;
+  letter-spacing: 0.2rem;
+  text-align: start;
+}
+.action-container .write-container input::placeholder {
+  color: white;
+  text-align: center;
+}
+.action-container .write-container input:focus {
+  background-color: var(--super-light-primary);
+  color: black;
+  width: 30rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.button-container .button {
+  background: var(--light-primary);
+  color: white;
+  margin: 0;
+  transition: all 0.4s;
+}
+.button-container .button:hover {
+  background: var(--primary);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.button-container .barre {
+  margin-top: 4rem;
+  width: 400px;
+  background: black;
+}
+
+.team-presentation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+.team-presentation-container h2 {
+  font-family: "Inconsolata", monospace;
+}
+
+footer {
+  font-size: 400;
+  height: 90px;
+  text-align: center;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer p {
+  padding: 0;
+  margin: 0;
+}
+footer .p2 {
+  margin-top: 1rem;
+}
+
+.tuto-container {
+  min-height: 79vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.tuto-container .barre {
+  margin: 1rem;
+  background: black;
+  width: 400px;
+}
+.tuto-container p {
+  font-size: 1.8rem;
+  margin: 1rem 0 3rem 3rem;
+}
+.tuto-container a {
+  color: var(--primary);
+  font-weight: 700;
+}
+.tuto-container h2 {
+  text-align: start;
+  margin-left: 4rem;
+  text-decoration: underline;
+}
+.tuto-container span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=style.css.map */

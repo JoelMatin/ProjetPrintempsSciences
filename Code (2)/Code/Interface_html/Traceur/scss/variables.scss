@@ -1,0 +1,17 @@
+:root {
+  --font-family: "Open Sans", sans-serif;
+  --font-title: "Dancing Script", cursive;
+  --text: #333;
+  --gray-light: #ddd;
+  --hint: #999;
+  --primary: #cb997e;
+  // --primary: blue ;
+  // --light: lightblue;
+  --light: #e6ccbe;
+  --gray: #444;
+  --gradient: linear-gradient(to right, var(--primary), var(--light));
+  --gradient-reverse: linear-gradient(to left, var(--primary), var(--light));
+}
+
+// font-family: 'Dancing Script', cursive;
+// font-family: 'Open Sans', sans-serif;

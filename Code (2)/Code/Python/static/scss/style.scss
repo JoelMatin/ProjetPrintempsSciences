@@ -1,0 +1,470 @@
+@import "bases";
+@import "classes";
+@import "utils";
+
+// GENERAL
+.container {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--super-light-primary);
+  background: white;
+}
+//HEADER
+header {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  background: var(--primary);
+  color: white;
+  .img-container {
+    background: white;
+    padding: 1rem;
+    margin: 0.1rem;
+    // flex: 4rem;
+  }
+  h2 {
+    flex: 1;
+    font-family: "Inconsolata", monospace;
+    margin: 0;
+    padding-top: 2.5rem;
+    text-align: center;
+    color: white;
+    // transition: all 0.4s;
+    // &:hover {
+    //   transform: scale(1.3);
+    // }
+  }
+  a {
+    flex: end;
+    margin: 2rem 4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 2rem;
+    transition: all 0.1s;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+  .draw {
+    margin: 2rem 0;
+  }
+}
+//INTRO
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  .barre {
+    @extend %barre;
+    margin: 1rem;
+    background: black;
+    width: 400px;
+  }
+  p {
+    margin: 2rem;
+  }
+  a {
+    color: var(--primary);
+    font-weight: 700;
+  }
+}
+// SETTINGS
+.settings-container {
+  input {
+    border-radius: 1rem;
+    border: solid 2px var(-primary);
+    height: 3rem;
+    background: var(--light-primary);
+    color: var(--input-text);
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 500;
+    padding-left: 0.5rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: 1rem;
+    &::placeholder {
+      color: white;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  h1 {
+    grid-area: h1;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  .barre {
+    align-self: center center;
+    grid-area: barre;
+    @extend %barre;
+    margin: 0.5rem;
+    background: black;
+    width: 200px;
+    place-self: center center;
+  }
+  p {
+    margin: 1rem 2rem;
+  }
+  .settings-form {
+    display: grid;
+    grid:
+      "h3a h3b h3c" auto
+      "barre1 barre2 barre3" auto
+      "p1 p2 p3" auto
+      "bh rleft centerx" auto
+      "bw rr centery" auto
+      / 1fr 1fr 1fr;
+    // grid-gap: 1rem;
+    margin: 2rem;
+    p {
+      text-align: center;
+    }
+    .p1 {
+      grid-area: p1;
+    }
+    .p2 {
+      grid-area: p2;
+    }
+    .p3 {
+      grid-area: p3;
+    }
+    h3 {
+      margin: 0;
+    }
+    .h3a {
+      grid-area: h3a;
+    }
+    .h3b {
+      grid-area: h3b;
+    }
+    .h3c {
+      grid-area: h3c;
+    }
+    .board-width {
+      grid-area: bw;
+      place-self: center center;
+      width: 200px;
+    }
+    .board-height {
+      grid-area: bh;
+      place-self: center center;
+      width: 200px;
+    }
+    .rope-left {
+      grid-area: rleft;
+      place-self: center center;
+      width: 200px;
+    }
+    .rope-right {
+      grid-area: rr;
+      place-self: center center;
+      width: 200px;
+    }
+    .centerx {
+      grid-area: centerx;
+      place-self: center center;
+      width: 200px;
+    }
+    .centery {
+      grid-area: centery;
+      place-self: center center;
+      width: 200px;
+    }
+    .barre1 {
+      grid-area: barre1;
+      @extend %barre;
+      margin: 0.5rem;
+      background: black;
+      width: 100px;
+    }
+    .barre3 {
+      grid-area: barre3;
+      @extend %barre;
+      margin: 0rem;
+      background: black;
+      width: 100px;
+    }
+    .barre2 {
+      grid-area: barre2;
+      @extend %barre;
+      margin: 0rem;
+      background: black;
+      width: 100px;
+    }
+  }
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  button {
+    @extend %bouton;
+    background: var(--light-primary);
+    color: white;
+    margin: 0;
+    // margin-bottom: 1rem;
+    transition: all 0.4s;
+    &:hover {
+      background: var(--primary);
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+}
+// TRANSITION
+.heigth-container {
+  display: grid;
+  grid:
+    "img h3" 30px
+    "img barre" 2px
+    "img p" auto
+    "img form" auto/300px 1fr;
+  place-items: center center;
+  padding: 2rem;
+  background: var(--super-light-primary);
+  margin-bottom: 2rem;
+  h3 {
+    grid-area: h3;
+    margin: 0;
+  }
+  .img-container {
+    grid-area: img;
+  }
+  p {
+    grid-area: p;
+    text-align: center;
+  }
+  .barre {
+    @extend %barre;
+    grid-area: barre;
+    background: black;
+    width: 50px;
+  }
+  form {
+    grid-area: form;
+  }
+  input {
+    border-radius: 1rem;
+    border: solid 1px var(-primary);
+    height: 3rem;
+    background: var(--light-primary);
+    color: var(--input-text);
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 700;
+    padding-left: 0.5rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    &::placeholder {
+      color: white;
+    }
+  }
+}
+//DRAW OR WRITE
+.action-container {
+  display: grid;
+  grid: "draw write" auto/1fr 1fr;
+  width: 100%;
+  place-items: center center;
+  text-align: center;
+  p {
+    margin: 0 1rem 2rem 0;
+  }
+  .draw-container {
+    grid-area: draw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      margin: 0;
+    }
+    .barre {
+      @extend %barre;
+      background: black;
+      width: 50px;
+      margin-bottom: 1rem;
+    }
+    .test {
+      display: block;
+      input {
+        place-self: center center;
+        height: auto;
+        border-radius: 1rem;
+        border: solid 1px var(--primary);
+        height: 0rem;
+        width: 0rem;
+        background: var(--light-primary);
+        color: white;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 500;
+        letter-spacing: 0.2rem;
+        text-align: start;
+        padding: 0.5rem;
+        padding-bottom: 3rem;
+        visibility: hidden;
+        // margin: 0;
+        // font-family: inherit;
+        // font-size: inherit;
+        // line-height: inherit;
+        // background-color: #fff;
+        // padding: 6px;
+        // color: #464a4c;
+        // border-radius: 0;
+      }
+      .inputfile + label {
+        background-color: green;
+        place-self: center center;
+        height: auto;
+        border-radius: 1rem;
+        border: solid 1px var(--primary);
+        background: var(--light-primary);
+        color: white;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 500;
+        letter-spacing: 0.2rem;
+        text-align: start;
+        padding: 1rem;
+      }
+    }
+  }
+  .write-container {
+    grid-area: write;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      margin: 0;
+    }
+    .barre {
+      @extend %barre;
+      background: black;
+      width: 50px;
+      margin-bottom: 1rem;
+    }
+    input {
+      min-height: 3rem;
+      height: auto;
+      border-radius: 1rem;
+      border: solid 1px var(--primary);
+      background: var(--light-primary);
+      color: white;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: 500;
+      padding: 1rem;
+      letter-spacing: 0.2rem;
+      text-align: start;
+      &::placeholder {
+        color: white;
+        text-align: center;
+      }
+      &:focus {
+        background-color: var(--super-light-primary);
+        color: black;
+        width: 30rem;
+      }
+    }
+  }
+}
+// BOUTON
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  // height: 50px;
+  .button {
+    @extend %bouton;
+    background: var(--light-primary);
+    color: white;
+    margin: 0;
+    // margin-bottom: 1rem;
+    transition: all 0.4s;
+    &:hover {
+      background: var(--primary);
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+  .barre {
+    @extend %barre;
+    margin-top: 4rem;
+    width: 400px;
+    background: black;
+  }
+}
+//TEAM PRESENTATION
+.team-presentation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  h2 {
+    font-family: "Inconsolata", monospace;
+  }
+}
+// FOOTER
+footer {
+  font-size: 400;
+  height: 90px;
+  text-align: center;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .p2 {
+    margin-top: 1rem;
+  }
+}
+
+//TUTO
+.tuto-container {
+  min-height: 79vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  .barre {
+    @extend %barre;
+    margin: 1rem;
+    background: black;
+    width: 400px;
+  }
+  p {
+    font-size: 1.8rem;
+    margin: 1rem 0 3rem 3rem;
+  }
+  a {
+    color: var(--primary);
+    font-weight: 700;
+  }
+  h2 {
+    text-align: start;
+    margin-left: 4rem;
+    text-decoration: underline;
+  }
+  span {
+    color: var(--primary);
+    font-weight: 700;
+  }
+}

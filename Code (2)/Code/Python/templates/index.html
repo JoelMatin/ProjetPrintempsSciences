@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4dfcd43aac.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/static/img/EPB.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/variables.css" />
+    <title>Simon's interface</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="img-container">
+          <img
+            src="/static/img/EPB2.png"
+            alt=" Ecole Polytechnique de Bruxelles"
+          />
+        </div>
+        <h2 class="title">Simon's interface - EM6 prototype</h2>
+        <a href="#draw" class="draw"> Draw</a>
+        <a href="#tuto" class="tuto">Tutorial</a>
+      </header>
+      <form action="/launch_drawing" method="POST">
+        <div class="settings-container">
+          <h1 id="draw">Configuration</h1>
+          <div class="barre"></div>
+          <div class="settings-form">
+            <h3 class="h3a">Board dimensions</h3>
+            <div class="barre1"></div>
+            <p class="p1">
+              Here you can modify your board's dimension.
+              <br />
+              Default: H =125cm - W125cm
+            </p>
+            <div class="form-group board-height">
+              <input
+                type="text"
+                class="form-control"
+                id="Height"
+                placeholder="Board Height"
+                name="Height"
+              />
+            </div>
+            <div class="form-group board-width">
+              <input
+                type="text"
+                class="form-control"
+                id="Length"
+                placeholder="Board Width"
+                name="Length"
+              />
+            </div>
+            <h3 class="h3b">Rope lengths</h3>
+            <div class="barre2"></div>
+            <p class="p2">
+              Here you must modify the initial lengths of your ropes.
+              <br />
+              Default: Left = 70 - Right = 70
+            </p>
+            <div class="form-group rope-right">
+              <input
+                type="text"
+                class="form-control"
+                id="Right_Rope"
+                placeholder="Right Rope Length"
+                name="Right_Rope"
+              />
+            </div>
+            <div class="form-group rope-left">
+              <input
+                type="text"
+                class="form-control"
+                id="Left_Rope"
+                placeholder="Left Rope Length"
+                name="Left_Rope"
+              />
+            </div>
+            <h3 class="h3c">Centering image</h3>
+            <div class="barre3"></div>
+            <p class="p3">
+              Here you can choose where you want your drawing to be printed.
+              <br />
+              Default: ( x; y ) ( 0 ; 0 ).
+            </p>
+            <div class="form-group centerx">
+              <input
+                type="text"
+                class="form-control"
+                id="centering_x"
+                placeholder="Center in the x axis"
+                name="Center_x"
+              />
+            </div>
+            <div class="form-group centery">
+              <input
+                type="text"
+                class="form-control"
+                id="centering_y"
+                placeholder="Center in the y axis"
+                name="Center_y"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="heigth-container">
+          <div class="img-container">
+            <img src="/static/img/world.jpg" alt="carte du monde" />
+          </div>
+          <h3>Height</h3>
+          <div class="barre"></div>
+          <p>
+            Here you can choose how tall your drawing is going to be in
+            centimeter. <br />
+            Default = 20cm
+          </p>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control draw-height"
+              id="multipli"
+              placeholder="Drawing's height"
+              name="Size"
+            />
+          </div>
+        </div>
+        <div class="action-container">
+          <div class="draw-container">
+            <h3>Draw</h3>
+            <div class="barre"></div>
+            <p>What do you want to draw? <br /></p>
+            <div class="test">
+              <input
+                type="file"
+                class="form-control inputfile"
+                id="file"
+                text=" Choose a file"
+                name="Art"
+                accept=".svg"
+              />
+              <label for="file">Choose a file</label>
+            </div>
+          </div>
+          <div class="write-container">
+            <h3>Write</h3>
+            <div class="barre"></div>
+            <p>What do you want to write?</p>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control text"
+                id="writing"
+                placeholder="Your Text"
+                name="Text"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button type="submit" id="run" class="btn btn-secondary button">
+            PRINT
+          </button>
+          <div class="barre"></div>
+        </div>
+      </form>
+      <form action="/" method="POST" class="reset">
+        <button type="submit" text="Reset">Reset</button>
+      </form>
+      <div class="tuto-container" id="tuto">
+        <h1>How to use Simon's interface?</h1>
+        <div class="barre"></div>
+        <h2>1. Launch from python environment</h2>
+        <p>
+          0. Verify that
+          <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">
+            flask module</a
+          >
+          is installed on your computer.
+          <br />
+          1. Run website.py program
+          <br />
+          2. In the Terminal, Ctrl + Leftclick on this link:
+          <span>http://127.0.0.1:5000/</span>.
+          <br />
+          3. A window just opened in your web browser.
+        </p>
+        <h2>2. How to print</h2>
+        <p>
+          0. All units are in centimeters. <br />
+          1. Mesure the height and width of your board.
+          <br />
+          2. Mesure the lengths of the ropes between the top corners and the
+          prototype.
+          <br />3. Choose where you want to print your drawing, the (0, 0)
+          position is the center of the board. <br />
+          4. Choose the height of your drawing.
+          <br />5. Choose the drawing or the text you want to print. <br />
+          6. Run the printing by clicking on the PRINT button.
+          <br />
+          7. Simon should be writting on the board, a turtle simulation opened
+          itself on your computer.
+          <br />
+          <br />
+          <span>Warning!</span> You can not print a drawing and a text at the
+          same time! Be sure to fill only one of the two option.
+        </p>
+        <h2>3. How to reuse Simon?</h2>
+        <p>
+          0. This section can be used if you have drawn something before and you
+          want to draw something else. <br />
+          1. Push the reset button. <br />
+          2. Go to your IDE and stop the website.py program <br />
+          3. Restart the website.py program <br />
+          4. Go back to the interface and fill all the inputs. <br />
+          5. Click the <a href="#run">PRINT</a> button again.
+        </p>
+        <h2>4. Print an image</h2>
+        <p>
+          1. Check if the image is in the available list, if not follow the
+          instructions below.
+          <br />
+          2. Convert your image on
+          <a href="https://www.pngtosvg.com/" target="_blank"> this site</a>
+          into an SVG format.
+          <br />
+          3. Add your image.svg file in the SvgFiles folder.
+          <br />
+          4. Relaunch the interface and print it by writing your image name in
+          the right input.
+        </p>
+      </div>
+      <footer>
+        <p>Copyright &copy - 2022</p>
+        <p class="p2">
+          Université Libre de Bruxelles - Ecole polytechnique de Bruxelles -
+          Projet BA2: Traceur Vertical EM6
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

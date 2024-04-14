@@ -1,0 +1,49 @@
+.title {
+  &-small {
+    letter-spacing: 0.5rem;
+    font-size: 1.7rem;
+  }
+}
+.text {
+  &-primary {
+    color: var(--primary) !important;
+  }
+  &-hint {
+    color: var(--hint);
+  }
+  &-gray {
+    color: var(--gray);
+  }
+}
+
+.legende {
+  color: var(--gray);
+  font-size: 2rem;
+  font-family: var(--font-title);
+}
+
+%barre {
+  height: 2px;
+  width: 200px;
+  background: var(--light);
+  place-self: center center;
+  border-radius: 5px;
+}
+
+%bouton {
+  // background: var(--gradient);
+  margin: 2rem 3rem 5rem 3rem;
+  padding: 1rem;
+  width: 180px;
+  font-size: 2rem;
+  text-align: center;
+  place-self: center center;
+  align-items: center;
+  // border: 1px solid var(--text);
+  border-radius: 10px;
+  color: white;
+  &:hover {
+    // border-color: var(--light);
+    background: var(--primary);
+  }
+}
